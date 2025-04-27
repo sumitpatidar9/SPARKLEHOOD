@@ -1,8 +1,8 @@
 
 import express from 'express';
 import dotenv from 'dotenv';
-import connectDB from './Utils/Connection.js';
-import router from './Routes/IncidentRoutes.js';
+import connectDB from './Utils/Connection';
+import router from './Routes/IncidentRoutes';
 
 dotenv.config();
 const app = express();
@@ -15,6 +15,6 @@ app.use('/incidents', router);
 
 connectDB().then(() => {
   app.listen(port, () => console.log(`Server running on port ${port}`));
-}).catch(err => {
+}).catch((err: unknown) => {
   console.error("Failed to connect to MongoDB", err);
 });

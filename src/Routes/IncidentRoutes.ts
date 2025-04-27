@@ -1,10 +1,9 @@
+import { Router, Request, Response } from 'express';
+import { getAllIncidents, getIncidentById } from '../Controllers/IncidentController';
 
+const router: Router = Router();
 
-import { Router } from 'express';
-import { getAllIncidents} from '../Controllers/IncidentController.js';
-const router = Router();
-
+router.get('/:id', getIncidentById);
 router.get('/', getAllIncidents);
-
 
 export default router;

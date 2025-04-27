@@ -5,7 +5,7 @@
   "main": "dist/Server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon --watch src --exec \"node --loader ts-node/esm\" src/Server.ts",
+    "dev": "nodemon --watch src --exec \"npx ts-node\" src/Server.ts",
     "build": "tsc",
     "start": "node dist/Server.js"
   },
@@ -20,7 +20,10 @@
   },
   "homepage": "https://github.com/sumitpatidar9/SPARKLEHOOD#readme",
   "dependencies": {
-    "express": "^5.1.0"
+    "@types/mongoose": "^5.11.97",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "mongoose": "^8.14.0"
   },
   "devDependencies": {
     "@types/express": "^5.0.1",
@@ -29,6 +32,5 @@
     "ts-node": "^10.9.2",
     "ts-node-dev": "^2.0.0",
     "typescript": "^5.8.3"
-  },
-  "type": "module"
+  }
 }
