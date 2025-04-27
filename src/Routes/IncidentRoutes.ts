@@ -6,9 +6,9 @@ const router: Router = Router();
 
 
 router.get('/incidents', getAllIncidents);
-router.get('/:id', getIncidentById);
+router.get('/incidents/:id', getIncidentById);
 router.post('/incidents', createIncident);
-router.delete('/:id', deleteIncident);
+router.delete('/incidents/:id', deleteIncident);
 
 
 
