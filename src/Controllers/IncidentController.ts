@@ -6,9 +6,8 @@ import Incident from '../Models/Incident';
 
 export const getAllIncidents = async (req: Request, res: Response): Promise<void> => {
     try {
-      console.log('Fetching all incidents');
+      
       const incidents = await Incident.find().sort({ reported_at: -1 });
-      console.log(incidents);
 
       res.status(200).json(incidents);
       return;
@@ -51,7 +50,7 @@ export const getIncidentById = async (req: Request, res: Response): Promise<void
 export const createIncident = async (req: Request, res: Response): Promise<void> => {
   try {
     const { title, description, severity } = req.body;
-    console.log(title, description, severity);
+    
 
     if (!title || !description || !severity) {
       res.status(400).json({ error: 'Title, description, and severity are required' });
